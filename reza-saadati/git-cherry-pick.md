@@ -1,4 +1,4 @@
-iWhat is git cherry-pick?
+# What is git cherry-pick?
 git cherry-pick is a Git command used to apply a specific commit from one branch onto another.
 
 It’s like saying:

@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  gitlab-runner:
+    container_name: gitlab-runner
+    restart: always
+    hostname: gitlab-runner
+    image: gitlab/gitlab-runner:alpine
+    volumes:
+      - /data/gitlab-runner/etc:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/hosts:/etc/hosts
+    networks:
+      - gitlab-network
+networks:
+  gitlab-network:
+    name: gitlab-network
+

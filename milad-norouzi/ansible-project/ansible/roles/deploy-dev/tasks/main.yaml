@@ -1,0 +1,29 @@
+- name: set timezone
+  timezone:
+    name: Etc/UTC
+
+- name: Set hostname
+  command: hostnamectl set-hostname {{ inventory_hostname }}
+
+- name: Add hostnmae to /etc/hosts
+  lineinfile:
+    path: /etc/hosts
+    regexp: '^127\.0\.1\.1'
+    line: "127.0.1.1 {{ inventory_hostname }}"
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Install pachages
+  apt:
+    name:
+      - nginx
+      # - python3-pip
+      - nload
+    state: present
+    update_cache: yes
+
+- name: create directory
+  file:
+    path: /opt/project1
+    state: directory

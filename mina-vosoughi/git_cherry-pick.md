@@ -38,7 +38,7 @@ With `git cherry-pick`, you can just grab commit `C` and add it to `main`!
 - The commit message will be copied (you can edit it if you want).
 - The commit will have a new hash (because it’s a new object in the branch’s history).
 
-### Step-by-step Example
+### Step-by-step example
 #### 1. Find the commit hash
 Use: 
 ```bash

@@ -27,7 +27,7 @@ git bisect [subcommand] [options]
 
 - **Efficiency:** Instead of testing N commits, you typically test around 1 + log₂(N) commits—binary search drastically reduces effort.
 
-### Step-by-step Example
+### Step-by-step example
 Create a new repo with 7 commits and introduce a "bug" in one commit then use git bisect to find that commit:
 #### Step 1. Set up the repo:
 ```bash 

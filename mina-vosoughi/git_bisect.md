@@ -20,7 +20,7 @@ The syntax for cherry-pick is as follows:
 ```bash
 git bisect [subcommand] [options]
 ```
-### What happens under the hood??
+### What happens under the hood
 - **Binary Search Logic:** Git calculates the midpoint of the commit range, checks it out, and repeats—cutting down the possible commits quickly.
 
 - **Metadata Tracking:** Git stores bisect progress and results in internal state files like `.git/BISECT_LOG` and `refs/bisect/*`, tracking what’s been tested and what’s left.
@@ -31,7 +31,7 @@ git bisect [subcommand] [options]
 Create a new repo with 7 commits and introduce a "bug" in one commit then use git bisect to find that commit:
 #### Step 1. Set up the repo:
 ```bash 
-mkdir bisect-demo && cd bisect-demo
+mkdir bisect-test && cd bisect-test
 git init
 ```
 #### Step 2. Add good commits:

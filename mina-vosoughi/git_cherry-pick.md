@@ -33,7 +33,7 @@ a `cherry-pick` against a merge commit requires that a parent is specified. The 
 Let’s say commit `C` on `feature-branch` is a bug fix you want in `main`, but you don’t want all the other changes from `feature-branch`.
 With `git cherry-pick`, you can just grab commit `C` and add it to `main`!
 
-### What happens under the hood?
+### What happens under the hood
 - Git takes the the difference, or *diff* in Git terms, introduced by the picked commit and applies it as a new commit on your current branch.
 - The commit message will be copied (you can edit it if you want).
 - The commit will have a new hash (because it’s a new object in the branch’s history).

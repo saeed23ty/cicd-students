@@ -26,7 +26,7 @@ workflow:
 | `if: $CI_COMMIT_TAG`                                 | Control when tag pipelines run.                      |
 | `if: $CI_COMMIT_BRANCH`                              | 	Control when branch pipelines run.      |
 
-## Interactions between `workflows` and `rules`
+### Interactions between `workflows` and `rules`
 
 A workflow can have an optional name along with a required rules section. Rules in
 a workflow are similar to those used in a specific job with some exceptions. The “when”

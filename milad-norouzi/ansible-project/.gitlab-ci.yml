@@ -1,0 +1,19 @@
+stages:
+  - deploy-dev
+
+deploy_dev:
+  stage: deploy-dev
+  image: ansible:v1
+  variables:
+    ANSIBLE_HOST_KEY_CHECKING: 'false'
+    ANSIBLE_FORCE_COLOR: 'true'
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo "$DEPLOYER_PRIVATE_KEY" >> ~/.ssh/id_ed25519
+    - chmod 600 ~/.ssh/id_ed25519
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    - pwd
+  script:
+    - cd ansible && ansible-playbook -i inventory/server-dev.ini deploy.yaml --become --become-method=sudo -t dev
+  only:
+    - dev
